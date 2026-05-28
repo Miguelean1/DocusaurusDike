@@ -4,7 +4,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
     title: 'DIKË Docs',
     tagline: 'Documentación del proyecto DIKË',
     favicon: 'img/favicon.ico',
-    url: 'https://dike-docs.vercel.app',
+    url: 'https://docusaurus-dike.vercel.app/',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -38,12 +38,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
             label: 'Documentación',
           },
           {
-            href: 'https://github.com/Miguelean1/DikeBack',
+            href: 'https://github.com/Miguelean1/Dike-backend',
             label: 'Backend',
             position: 'right',
           },
           {
-            href: 'https://github.com/Miguelean1/DikeFront',
+            href: 'https://github.com/Miguelean1/Dike-frontend',
             label: 'Frontend',
             position: 'right',
           },

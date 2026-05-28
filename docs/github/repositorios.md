@@ -9,8 +9,8 @@ title: Repositorios
 
 DIKË está organizado como un **multirrepo**, con dos repositorios independientes:
 
-- **[DikeBack](https://github.com/tuusuario/DikeBack)** — Backend Express.js + API REST
-- **[DikeFront](https://github.com/tuusuario/DikeFront)** — Frontend React + Vite
+- **[DikeBack](https://github.com/Miguelean1/DikeBack)** — Backend Express.js + API REST
+- **[DikeFront](https://github.com/Miguelean1/DikeFront)** — Frontend React + Vite
 
 ### Razón de esta estructura
 

@@ -15,13 +15,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 
 **Decisión:** Usar una estructura **multirrepo** con dos repositorios independientes (DikeBack y DikeFront).
 
-**Alternativas consideradas:**
-- **Monorrepo:** Un único repositorio con frontend y backend. Descartado porque:
-  - Compilación y deploy más lentos
-  - Conflictos de merge más probables
-  - Más difícil para equipos independientes
-- **Monorrepo con workspaces:** Mantendría dependencias compartidas. Descartado por complejidad inicial innecesaria.
-
 **Consecuencias:**
 - ✅ Frontend y backend se despliegan de forma independiente
 - ✅ Cada equipo puede trabajar en paralelo sin bloqueos
@@ -35,11 +28,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 **Contexto:** Se necesitaba elegir framework y build tool para el frontend.
 
 **Decisión:** **React 19** con **Vite 7** como herramienta de build.
-
-**Alternativas consideradas:**
-- **Vue.js:** Descartado porque el equipo tenía más experiencia con React
-- **Next.js:** Descartado porque no se necesita SSR (es SPA)
-- **Webpack:** Descartado porque Vite es más rápido en desarrollo
 
 **Consecuencias:**
 - ✅ Hot Module Replacement (HMR) rápidísimo en desarrollo
@@ -56,11 +44,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 
 **Decisión:** **Express.js 5.2.1** para el backend.
 
-**Alternativas consideradas:**
-- **NestJS:** Descartado porque es más pesado y con boilerplate excesivo para MVP
-- **Fastify:** Descartado por preferencia del equipo (mayor familiaridad con Express)
-- **Koa:** Descartado por menor madurez y comunidad
-
 **Consecuencias:**
 - ✅ Rápido de desarrollar, bajo overhead
 - ✅ Amplio ecosistema de middleware
@@ -76,11 +59,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 
 **Decisión:** **MySQL 8** como BD relacional, con **Sequelize 6** como ORM.
 
-**Alternativas consideradas:**
-- **PostgreSQL + Sequelize/TypeORM:** Descartado porque el servidor disponible tenía MySQL instalado
-- **MongoDB (NoSQL):** Descartado porque los datos tienen relaciones claras (usuario → posts → ratings)
-- **Prisma:** Descartado en favor de Sequelize por compatibilidad existente
-
 **Consecuencias:**
 - ✅ Relaciones bien definidas y consistencia ACID
 - ✅ Sequelize maneja migraciones automáticamente
@@ -95,11 +73,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 **Contexto:** Se necesitaba elegir mecanismo de autenticación.
 
 **Decisión:** **JWT (JSON Web Tokens)** con duración de 7 días.
-
-**Alternativas consideradas:**
-- **Sessions (servidor):** Descartado porque JWT es más escalable sin sesiones en servidor
-- **OAuth 2.0 (Google/GitHub):** No descartado, pero implementado como adicional
-- **API Keys:** Descartado porque es para máquina-a-máquina, no usuario-a-app
 
 **Consecuencias:**
 - ✅ Stateless (sin necesidad de almacenar sesiones)
@@ -117,11 +90,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 
 **Decisión:** **Cloudinary** para almacenar y servir imágenes.
 
-**Alternativas consideradas:**
-- **Almacenamiento local (servidor):** Descartado porque consume espacio servidor
-- **AWS S3:** Descartado porque es más complejo de configurar
-- **Google Cloud Storage:** Descartado por costo y complejidad
-
 **Consecuencias:**
 - ✅ Imágenes servidas desde CDN (rápido a nivel global)
 - ✅ Redimensionamiento automático on-the-fly
@@ -137,11 +105,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 **Contexto:** Se necesitaba elegir estrategia de estilos.
 
 **Decisión:** **Tailwind CSS 4** con utility-first approach.
-
-**Alternativas consideradas:**
-- **CSS Modules:** Descartado porque Tailwind es más rápido de desarrollar
-- **Styled Components:** Descartado por preferencia por clases CSS
-- **Bootstrap:** Descartado por ser menos flexible y más opinado
 
 **Consecuencias:**
 - ✅ Desarrollo rápido sin escribir CSS personalizado
@@ -171,11 +134,6 @@ Registro de las decisiones técnicas más relevantes tomadas durante el desarrol
 
 **Decisión:** **React Context API** para almacenar JWT y datos de usuario.
 
-**Alternativas consideradas:**
-- **Redux:** Descartado por overhead en MVP (overkill)
-- **Zustand:** Descartado en favor de Context nativa
-- **Jotai/Recoil:** Descartado por preferencia
-
 **Consecuencias:**
 - ✅ Mínimas dependencias externas
 - ✅ Nativa de React, sin boilerplate
@@ -197,10 +155,6 @@ components/         (Navbar, Footer, Card, UI)
 services/           (API client)
 context/            (Auth state)
 ```
-
-**Alternativas consideradas:**
-- **Estructural:** Separar por type (componentes/, hooks/, pages/) → Descartado
-- **Modular:** Cada módulo tiene componentes, servicios, tests → Demasiado para MVP
 
 **Consecuencias:**
 - ✅ Claro dónde buscar código de una feature

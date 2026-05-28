@@ -26,10 +26,10 @@ Listado completo de los endpoints disponibles en la API REST del backend.
 - **Respuesta exitosa:** `201 Created`
   ```json
   {
-    "message": "Usuario registrado exitosamente",
-    "user": { "id", "username", "email" }
+    "message": "Cuenta creada. Revisa tu correo para verificarla."
   }
   ```
+  > El usuario debe verificar su email antes de poder iniciar sesión.
 
 ### `POST /auth/login`
 - **Descripción:** Inicia sesión y devuelve un JWT.
@@ -43,10 +43,10 @@ Listado completo de los endpoints disponibles en la API REST del backend.
 - **Respuesta exitosa:** `200 OK`
   ```json
   {
-    "token": "eyJhbGciOiJIUzI1NiIs...",
-    "user": { "id", "username", "email", "role" }
+    "token": "eyJhbGciOiJIUzI1NiIs..."
   }
   ```
+  > El perfil del usuario se obtiene decodificando el JWT y haciendo `GET /users/:id`.
 
 ### `GET /auth/verify-email/:token`
 - **Descripción:** Verifica el email del usuario con un token.
@@ -63,7 +63,7 @@ Listado completo de los endpoints disponibles en la API REST del backend.
   ```json
   {
     "token": "string",
-    "newPassword": "string"
+    "password": "string"
   }
   ```
 
@@ -234,7 +234,7 @@ Listado completo de los endpoints disponibles en la API REST del backend.
     "rated_user_id": "number",
     "post_id": "number",
     "score": "1-5",
-    "review": "string"
+    "comment": "string"
   }
   ```
 
@@ -268,7 +268,7 @@ Listado completo de los endpoints disponibles en la API REST del backend.
 ## Newsletter (`/api/newsletter`)
 
 ### `POST /newsletter/subscribe`
-- **Descripción:** Suscribirse al newsletter.
+- **Descripción:** Envía un email de bienvenida/recomendación al email proporcionado. No almacena la suscripción en base de datos.
 - **Body:** `{ "email": "string" }`
 
 ---

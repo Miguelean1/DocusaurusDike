@@ -1,41 +1,29 @@
-# Website
+# DIKË — Documentación
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Sitio de documentación técnica del proyecto DIKË, generado con [Docusaurus](https://docusaurus.io/) y desplegado en Vercel.
 
-## Installation
+## Repositorios del proyecto
+
+- [DikeBack](https://github.com/Miguelean1/DikeBack) — Backend Express.js + API REST
+- [DikeFront](https://github.com/Miguelean1/DikeFront) — Frontend React + Vite
+
+## Desarrollo local
 
 ```bash
-yarn
+npm install
+npm start
 ```
 
-## Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Abre [http://localhost:3000](http://localhost:3000) en el navegador.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Genera el sitio estático en la carpeta `build/`.
 
-## Deployment
+## Despliegue
 
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+El sitio se despliega automáticamente en Vercel con cada push a `main`. El enlace es: https://docusaurus-dike.vercel.app

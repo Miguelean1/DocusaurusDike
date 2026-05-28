@@ -26,5 +26,5 @@ La aplicación incluye funcionalidades como:
 
 ## Repositorios
 
-- [Backend - DikeBack](https://github.com/tuusuario/DikeBack)
-- [Frontend - DikeFront](https://github.com/tuusuario/DikeFront)
+- [Backend - DikeBack](https://github.com/Miguelean1/DikeBack)
+- [Frontend - DikeFront](https://github.com/Miguelean1/DikeFront)

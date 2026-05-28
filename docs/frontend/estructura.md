@@ -82,6 +82,7 @@ src/
 | Axios | 1.16.1 | HTTP client |
 | Tailwind CSS | 4.1.18 | Styling |
 | shadcn/ui | 4.7.0 | Component library |
-| Radix UI | 1.4.1 | Headless primitives |
+| @base-ui/react | 1.4.1 | Headless primitives (Base UI) |
+| @radix-ui/react-slot | 1.2.4 | Slot primitive (Radix UI) |
 | Lucide React | 1.16.0 | Icons |
 | SweetAlert2 | 11.26.25 | Alert dialogs |

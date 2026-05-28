@@ -35,7 +35,7 @@ Guía para desplegar DIKË en producción.
 ### Backend en Railway
 
 1. En el mismo proyecto de Railway, añade un nuevo servicio.
-2. Selecciona `DikeBck`.
+2. Selecciona `DikeBack`.
 3. Configura variables de entorno (ver sección de variables).
 4. Railway creará automáticamente una BD MySQL si lo requieres.
 5. El backend estará disponible en `https://dike-back.railway.app`
@@ -57,69 +57,6 @@ Guía para desplegar DIKË en producción.
 ### Backend en Railway
 
 (Igual que la opción anterior)
-
----
-
-## Opción 3: Despliegue manual en servidor propio
-
-### Requisitos
-
-- Un servidor (DigitalOcean, Linode, AWS EC2, etc.) con Ubuntu/Debian
-- SSH acceso al servidor
-- Node.js 18+ instalado
-
-### Pasos
-
-1. **Clona el repositorio en el servidor:**
-   ```bash
-   cd /opt
-   git clone https://github.com/tuusuario/DikeBack.git
-   git clone https://github.com/tuusuario/DikeFront.git
-   ```
-
-2. **Instala dependencias:**
-   ```bash
-   cd DikeBack && npm install --production
-   cd ../Dike-frontend && npm install --production
-   ```
-
-3. **Build del frontend:**
-   ```bash
-   cd Dike-frontend
-   npm run build
-   # Genera carpeta 'dist' con archivos estáticos
-   ```
-
-4. **Configura Nginx como proxy:**
-   ```nginx
-   server {
-     listen 80;
-     server_name tu-dominio.com;
-
-     # Frontend
-     location / {
-       root /opt/Dike-frontend/dist;
-       try_files $uri $uri/ /index.html;
-     }
-
-     # Backend API
-     location /api/ {
-       proxy_pass http://localhost:3002;
-       proxy_http_version 1.1;
-       proxy_set_header Upgrade $http_upgrade;
-       proxy_set_header Connection 'upgrade';
-     }
-   }
-   ```
-
-5. **Usa PM2 para mantener el backend ejecutándose:**
-   ```bash
-   npm install -g pm2
-   cd /opt/DikeBack
-   pm2 start index.js --name "dike-backend"
-   pm2 startup
-   pm2 save
-   ```
 
 ---
 
@@ -187,14 +124,6 @@ Si usas una plataforma como Railway o Render:
 
 **En plataformas como Vercel, Railway, Netlify:** SSL está incluido gratuitamente.
 
-**En servidor propio:**
-
-```bash
-# Usando Let's Encrypt + Certbot
-sudo apt install certbot python3-certbot-nginx
-sudo certbot certonly --nginx -d tu-dominio.com
-```
-
 ---
 
 ## URLs de producción (ejemplo)
@@ -215,15 +144,6 @@ Una vez desplegado:
 - Los logs aparecen en el dashboard de cada plataforma.
 - Configura alertas para downtime.
 
-### En servidor propio
-```bash
-# Ver logs del backend
-pm2 logs dike-backend
-
-# Ver logs de Nginx
-tail -f /var/log/nginx/error.log
-```
-
 ---
 
 ## Rollback (en caso de error)
@@ -232,10 +152,3 @@ tail -f /var/log/nginx/error.log
 - Haz push a una rama anterior o revert en Git.
 - El deploy automático lo deshace.
 
-### Manual
-```bash
-# Vuelve a la versión anterior
-git checkout <commit-hash>
-npm run build
-# Reinicia servicios
-```

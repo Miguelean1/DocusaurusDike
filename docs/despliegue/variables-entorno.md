@@ -38,7 +38,7 @@ Archivo: `DikeBack/.env`
 | Variable      | Descripción                           | Ejemplo |
 |---------------|---------------------------------------|---------|
 | `PORT`        | Puerto en el que escucha Express      | `3002`  |
-| `NODE_ENV`    | Entorno (development / production)    | `development` |
+| `NODE_ENV`    | Entorno (development / production) — opcional, Node.js usa `development` por defecto | `development` |
 
 ### CORS y URLs
 

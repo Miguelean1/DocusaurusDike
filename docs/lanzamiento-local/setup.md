@@ -29,12 +29,12 @@ Abre una terminal y ejecuta:
 
 ```bash
 # Clonar backend
-git clone https://github.com/tuusuario/DikeBack
+git clone https://github.com/Miguelean1/DikeBack
 cd DikeBack
 
 # Clonar frontend (en otra carpeta)
 cd ..
-git clone https://github.com/tuusuario/DikeFront
+git clone https://github.com/Miguelean1/DikeFront
 cd Dike-frontend
 ```
 
