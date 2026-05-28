@@ -22,23 +22,23 @@ El proyecto sigue la convención [Conventional Commits](https://www.conventional
 ### Ejemplos
 
 ```
-feat(auth): añadir login con JWT
+feat(auth): add JWT login
 
-Implementa autenticación basada en JWT con tokens de 7 días.
-El token se almacena en localStorage y se envía en cada petición.
+Implements JWT-based authentication with 7-day tokens.
+Token is stored in localStorage and sent in every request.
 
 Closes #123
 ```
 
 ```
-fix(posts): corregir validación de título vacío
+fix(posts): validate empty title on post creation
 
-El backend aceptaba títulos vacíos en la creación de posts.
-Se añadió validación en el controlador.
+Backend was accepting empty titles when creating posts.
+Added validation in the controller.
 ```
 
 ```
-docs(readme): actualizar instrucciones de setup
+docs(readme): update setup instructions
 ```
 
 ---
@@ -47,15 +47,15 @@ docs(readme): actualizar instrucciones de setup
 
 | Tipo      | Cuándo usarlo | Ejemplo |
 |-----------|---------------|---------|
-| `feat`    | **Nueva funcionalidad** | `feat(chat): añadir mensajería en tiempo real` |
-| `fix`     | **Corrección de un bug** | `fix(auth): token expirado no redirige a login` |
-| `docs`    | **Cambios en documentación** | `docs(readme): actualizar variables de entorno` |
-| `style`   | **Formato, espacios, semicolons** (sin cambio lógico) | `style(frontend): formatear código con Prettier` |
-| `refactor`| **Refactorización sin cambio de comportamiento** | `refactor(api): extraer validación a middleware` |
-| `test`    | **Añadir o corregir tests** | `test(auth): añadir casos para login fallido` |
-| `chore`   | **Tareas de mantenimiento, deps, CI** | `chore(deps): actualizar React a 19.2.0` |
-| `perf`    | **Mejoras de rendimiento** | `perf(feed): lazy load imágenes en feed` |
-| `ci`      | **Cambios en CI/CD** | `ci(github-actions): añadir test en PR` |
+| `feat`    | **Nueva funcionalidad** | `feat(chat): add real-time messaging` |
+| `fix`     | **Corrección de un bug** | `fix(auth): redirect to login on expired token` |
+| `docs`    | **Cambios en documentación** | `docs(readme): update environment variables` |
+| `style`   | **Formato, espacios, semicolons** (sin cambio lógico) | `style(frontend): format code with Prettier` |
+| `refactor`| **Refactorización sin cambio de comportamiento** | `refactor(api): extract validation to middleware` |
+| `test`    | **Añadir o corregir tests** | `test(auth): add cases for failed login` |
+| `chore`   | **Tareas de mantenimiento, deps, CI** | `chore(deps): update React to 19.2.0` |
+| `perf`    | **Mejoras de rendimiento** | `perf(feed): lazy load feed images` |
+| `ci`      | **Cambios en CI/CD** | `ci(github-actions): add test on PR` |
 | `revert`  | **Revertir un commit anterior** | `revert: feat(chat)` |
 
 ---
@@ -81,23 +81,24 @@ Especifica qué parte del proyecto se modifica:
 
 ## Descripción corta
 
-- Usa **imperativo** (añadir, corregir, mejorar) no pasado (añadió, corrigió).
+- **Siempre en inglés.**
+- Usa **imperativo** (add, fix, update) no pasado (added, fixed).
 - **No capitalizar** la primera letra.
 - **Sin punto** al final.
 - **Máximo 50 caracteres**.
 
 ### ✅ Correcto
 ```
-feat(auth): añadir autenticación JWT
-fix(feed): mostrar posts filtrados correctamente
-docs: actualizar instrucciones de instalación
+feat(auth): add JWT authentication
+fix(feed): show filtered posts correctly
+docs: update installation instructions
 ```
 
 ### ❌ Incorrecto
 ```
-feat(auth): Añadir autenticación JWT.
-feat(auth): added JWT authentication
-fix(feed): posts not showing
+feat(auth): Add JWT authentication.   ← primera letra en mayúscula y punto al final
+feat(auth): added JWT authentication  ← en pasado, no imperativo
+fix(feed): fix posts                  ← demasiado vago, sin contexto
 ```
 
 ---
@@ -140,44 +141,43 @@ BREAKING CHANGE: ya no soportamos Node 16
 
 ### Nuevo endpoint
 ```
-feat(api): POST /posts/search con filtros avanzados
+feat(api): add POST /posts/search with advanced filters
 
-Añade un nuevo endpoint para búsqueda avanzada con:
-- Filtro por categoría
-- Filtro por tipo (loan/donation/exchange)
-- Filtro por estado
-- Ordenamiento por fecha o relevancia
+Adds a new endpoint for advanced search with:
+- Filter by category
+- Filter by type (loan/donation/exchange)
+- Filter by status
+- Sort by date or relevance
 
 Closes #42
 ```
 
 ### Bugfix
 ```
-fix(frontend): autoscroll en chat se dispara dos veces
+fix(frontend): autoscroll in chat triggers twice
 
-El hook useEffect había una dependencia que causaba
-re-renders innecesarios, haciendo scroll al final
-del chat dos veces por cada mensaje.
+useEffect had a dependency causing unnecessary re-renders,
+scrolling to the bottom of the chat twice per message.
 
-Se agregó [] como dependencia correcta.
+Fixed by using [] as the correct dependency.
 
 Closes #89
 ```
 
 ### Refactoring
 ```
-refactor(auth): consolidar validación de JWT
+refactor(auth): consolidate JWT validation
 
-Se extrajo la validación de JWT a un middleware
-compartido para evitar duplicación entre rutas.
-No hay cambios en el comportamiento.
+Extracted JWT validation to a shared middleware
+to avoid duplication across routes.
+No behavior changes.
 ```
 
 ### Actualización de dependencias
 ```
-chore(deps): actualizar Express 5.1.0 → 5.2.1
+chore(deps): update Express 5.1.0 → 5.2.1
 
-Incluye fixes de seguridad y mejoras de rendimiento.
+Includes security fixes and performance improvements.
 ```
 
 ---
@@ -209,7 +209,7 @@ Incluye fixes de seguridad y mejoras de rendimiento.
 El título de la PR debe seguir el mismo formato:
 
 ```
-feat(chat): añadir notificaciones de escritura
+feat(chat): add typing notifications
 
 [body of PR with description]
 Closes #123
