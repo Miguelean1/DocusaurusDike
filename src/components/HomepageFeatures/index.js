@@ -4,44 +4,35 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Comparte objetos',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Publica artículos para prestar, donar o intercambiar con otros usuarios de tu comunidad de forma sencilla.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Mensajería directa',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Coordina préstamos y donaciones mediante el chat integrado entre usuarios, sin salir de la plataforma.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Reputación y valoraciones',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Sistema de puntuaciones para generar confianza entre usuarios y fomentar un intercambio seguro.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({title, description}) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
+      <div className="text--center padding-horiz--md padding-vert--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
