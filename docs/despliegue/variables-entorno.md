@@ -1,7 +1,4 @@
----
-sidebar_position: 2
-title: Variables de entorno
----
+
 
 # Variables de entorno
 
