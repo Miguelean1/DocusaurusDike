@@ -52,7 +52,7 @@ Archivo: `DikeBack/.env`
 | Variable                    | Descripción                          | Ejemplo |
 |-----------------------------|--------------------------------------|---------|
 | `CLOUDINARY_CLOUD_NAME`     | Cloud name de Cloudinary             | `dhhxrrgut` |
-| `CLOUDINARY_API_KEY`        | API Key de Cloudinary                | `687499682736147` |
+| `CLOUDINARY_API_KEY`        | API Key de Cloudinary                | `api_key` |
 | `CLOUDINARY_API_SECRET`     | API Secret de Cloudinary (SECRETO)   | `OCM1SxU...` |
 
 **Cómo obtener credenciales de Cloudinary:**
@@ -108,9 +108,9 @@ CORS_ORIGIN=http://localhost:5173
 FRONTEND_URL=http://localhost:5173
 
 # Cloudinary
-CLOUDINARY_CLOUD_NAME=dhhxrrgut
-CLOUDINARY_API_KEY=687499682736147
-CLOUDINARY_API_SECRET=OCM1SxUXmWhSDK1Xmhz0iUG6yVI
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 
 # Email
 EMAIL_USER=tu_correo@gmail.com
